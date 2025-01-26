@@ -13,9 +13,7 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->ulid('hash_id');
             $table->string('title', length: 255);
-            $table->string('slug', length: 255);
             $table->text('content')->nullable();
             $table->enum('status', ['published', 'draft']);
             $table->unsignedBigInteger('author_id');

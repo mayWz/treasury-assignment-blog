@@ -13,11 +13,10 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = [
-        'hash_id',
         'title',
-        'slug',
         'content',
         'status',
+        'author_id',
         'published_at'
     ];
 
