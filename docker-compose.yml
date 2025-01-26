@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+    db:
+        image: mysql
+        restart: always
+        environment:
+            - MYSQL_ROOT_PASSWORD=pQwsad321s!
+            - MYSQL_USER=blog-db-user
+            - MYSQL_PASSWORD=pQwsad321s!
+        ports:
+            - "3306:3306"
