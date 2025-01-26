@@ -1,5 +1,7 @@
 <?php
 
+use App\Livewire\Me\PostUpdate;
+use App\Livewire\Me\PostList;
 use App\Livewire\Me\PostCreate;
 use Illuminate\Support\Facades\Route;
 
@@ -12,14 +14,10 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', PostList::class)->name('dashboard');
 
-    Route::name('me.posts.')->group(function () {
-        // Route::get('/list', function () {
-        //     return view('posts.list');
-        // })->name('list');
-        Route::get('/create', PostCreate::class)->name('create');
+    Route::name('posts.')->group(function () {
+        Route::get('/posts/create', PostCreate::class)->name('create');
+        Route::get('/posts/{post}', PostUpdate::class)->name('update');
     });
 });

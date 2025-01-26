@@ -25,7 +25,6 @@ class PostCreate extends Component
             ->with('status', 'Post created!');
     }
 
-
     public function render()
     {
         return view('livewire.me.post-create')->with([
