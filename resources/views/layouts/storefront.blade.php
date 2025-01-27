@@ -27,7 +27,6 @@
                 <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                     <a href="/">
                         <div class="flex">
-                            <?xml version='1.0' encoding='iso-8859-1'?>
                             <!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
                             <svg fill="#000000" class="h-12 w-auto text-white lg:h-16 lg:text-[#FF2D20]" version="1.1"
                                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 470"

@@ -2,10 +2,12 @@
 
 namespace App\Livewire\Me;
 
+use Throwable;
 use App\Models\Post;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Livewire\Attributes\Layout;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Auth\Access\AuthorizationException;
 
@@ -32,13 +34,18 @@ class PostList extends Component
 
     public function delete($id)
     {
-        $post = Post::findOrFail($id);
-        if (Auth::User()->id !== $post->author_id) {
-            throw new AuthorizationException;
+        try {
+            $post = Post::findOrFail($id);
+            if (Auth::User()->id !== $post->author_id) {
+                throw new AuthorizationException;
+            }
+            $post->delete();
+        } catch (Throwable $e) {
+            $message = $e->getMessage();
+            Log::info($message);
+            return back()->withError($message)->withInput();
         }
-        $post->delete();
 
-        return redirect()->to('/dashboard')
-            ->with('status', 'Post deleted!!');
+        return redirect()->to('/dashboard');
     }
 }

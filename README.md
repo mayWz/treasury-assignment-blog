@@ -7,7 +7,11 @@ Welcome to the Blog system, power by Laravel and Jetstream starter kit.
 1. User and Authentication
 2. Team
 3. Blog Post CRUD
-3. Blog comment CRUD
+
+## Coming soon Feature
+- Upload banner for blog post
+- Blog comment CRUD
+- Like Blog Post 
 
 ## Prerequisites
 
@@ -40,9 +44,12 @@ php artisan optimize:clear
 
 #### Useful cli scripts
 
+#### Troubleshooting
 
 ## Contact
 
 email to maywza[at]gmail.com
 
 ## License
+
+None

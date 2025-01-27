@@ -21,15 +21,15 @@
                                 Status
                             </th>
                             <th scope="col"
-                                class="px-5 py-3 text-sm font-normal text-center text-gray-800 uppercase bg-white border-b border-gray-200">
+                                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
                                 Title
                             </th>
                             <th scope="col"
-                                class="px-5 py-3 text-sm font-normal text-center text-gray-800 uppercase bg-white border-b border-gray-200">
+                                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
                                 Content
                             </th>
                             <th scope="col"
-                                class="px-5 py-3 text-sm font-normal text-center text-gray-800 uppercase bg-white border-b border-gray-200">
+                                class="px-5 py-3 text-sm font-normal text-left text-gray-800 uppercase bg-white border-b border-gray-200">
                                 Published Date
                             </th>
                             <th scope="col"
@@ -49,20 +49,20 @@
                                     </td>
                                     <td class="text-center px-5 py-5 text-sm bg-white border-b border-gray-200">
                                         <p class="text-gray-900 whitespace-no-wrap">
-                                            {{ $post->status }}
+                                            <x-post-status status="{{ $post->status }}" />
                                         </p>
                                     </td>
-                                    <td class="text-center px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                    <td class="text-left px-5 py-5 text-sm bg-white border-b border-gray-200">
                                         <p class="text-gray-900 whitespace-no-wrap">
                                             {{ $post->title }}
                                         </p>
                                     </td>
-                                    <td class="text-center px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                    <td class="text-left px-5 py-5 text-sm bg-white border-b border-gray-200">
                                         <p class="text-gray-900 whitespace-no-wrap">
                                             {{ Str::limit($post->content, 20) }}
                                         </p>
                                     </td>
-                                    <td class="text-center px-5 py-5 text-sm bg-white border-b border-gray-200">
+                                    <td class="text-left px-5 py-5 text-sm bg-white border-b border-gray-200">
                                         <p class="text-gray-900 whitespace-no-wrap">
                                             {{ $post->created_at }}
                                         </p>

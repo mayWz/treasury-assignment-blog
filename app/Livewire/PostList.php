@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Models\Post;
 use Livewire\Component;
+use App\Enums\PostStatus;
 use Livewire\WithPagination;
 use Livewire\Attributes\Layout;
 
@@ -15,7 +16,8 @@ class PostList extends Component
     public function render()
     {
         return view('livewire.post-list', [
-            'posts' => Post::orderByDesc('created_at')->paginate(10),
+            'posts' => Post::where('status', PostStatus::PUBLISHED->value)
+                ->orderByDesc('created_at')->paginate(10),
         ]);
     }
 }
