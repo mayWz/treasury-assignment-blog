@@ -88,11 +88,7 @@
                 <div class="mt-4">
                     {{ $posts->links('pagination::tailwind') }}
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
 </div>
