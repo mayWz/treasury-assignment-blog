@@ -28,6 +28,7 @@ cd treasury-assignment-blog
 docker compose up -d 
 composer install
 cp .env.example .env
+// change database connect with db credential (check below section)
 ----------------
 php artisan key:generate
 php artisan migrate
@@ -35,11 +36,27 @@ php artisan db:seed
 npm install
 ----------------
 // to run application
-npm run dev
+npm run build
 php artisan serve
 ----------------
 // to clear all cache
 php artisan optimize:clear
+```
+
+## Credential for local test
+Applicateion User
+```
+username: admin
+password: test@231!
+```
+Database User 
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=blog
+DB_USERNAME=blog-db-user
+DB_PASSWORD=pQwsad321s!
 ```
 
 #### Useful cli scripts
