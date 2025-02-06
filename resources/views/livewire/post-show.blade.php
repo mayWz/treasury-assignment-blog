@@ -26,7 +26,7 @@
                     </div>
                     <hr />
                     <div class="mt-4 mb-4">
-                        {{ $post->content }}
+                        {!! nl2br($post->content) !!}
                     </div>
                     <hr />
                 </div>
